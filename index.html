@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ระบบจัดการหอพัก</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    input, select, button { padding: 8px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+    .room { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 10px; background: #f9f9f9; }
+  </style>
+</head>
+<body>
+  <h2>ระบบจัดการหอพัก</h2>
+
+  <input type="text" id="roomNumber" placeholder="หมายเลขห้อง" required>
+  <input type="text" id="tenantName" placeholder="ชื่อผู้เช่า" required>
+  <input type="number" id="roomPrice" placeholder="ค่าห้อง (บาท)" required>
+  <input type="number" id="parkingFee" placeholder="ค่าจอดรถ (บาท)" required>
+  <input type="number" id="waterUsage" placeholder="หน่วยค่าน้ำ" required>
+  <input type="number" id="electricityUsage" placeholder="หน่วยค่าไฟ" required>
+  <select id="paidStatus">
+    <option value="ยังไม่จ่าย">ยังไม่จ่าย</option>
+  </select>
+  <input type="number" id="totalPrice" placeholder="รวมทั้งหมด (คำนวณอัตโนมัติ)" readonly>
+  <button onclick="submitData()">บันทึกข้อมูลไปยัง Google Sheet</button>
+
+  <h3>รายการห้องจาก Google Sheet</h3>
+  <div id="roomList">กำลังโหลด...</div>
+
+  <script src="Scrip.js"></script>
+</body>
+</html>
